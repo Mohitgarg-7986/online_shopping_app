@@ -13,7 +13,7 @@ export default defineConfig({
       strictPort: true,
       allowedHosts: [
         '16-16-128-178.nip.io',
-        'localhost'
+        'localhosts'
       ]
     }
 })
