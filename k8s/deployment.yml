@@ -1,0 +1,29 @@
+kind: Deployment
+apiVersion: apps/v1
+
+metadata:
+  name: onlineshop-deployment
+  namespace: onlineshop-ns
+  labels:
+    app: onlineshop-app
+ 
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: onlineshop-app
+   
+  template:
+     metadata:
+       name: onlineshop-pod
+       namespace: onlineshop-ns
+       labels:
+          app: onlineshop-app
+     
+     spec:
+       containers:
+       - name: onlineshop-container
+         image: mohit7986/onlineshop-app:latest
+         ports:
+         - containerPort: 5173
+
